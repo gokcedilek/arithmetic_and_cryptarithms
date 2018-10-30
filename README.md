@@ -1,6 +1,6 @@
-**CPEN 221 / Fall 2017: Machine Problem 4**
+**CPEN 221 -- Fall 2018 -- Machine Problem 3**
 
-Arithmetic and Other Small Pebbles
+Arithmetic, Cryptarithms, and Such Small Pebbles
 ===
 
-The details for this assignment are available here: [ArithmeticAndMore.pdf](https://www.dropbox.com/s/l1z8v14x8jnvo9f/mp-ArithmeticAndMore.pdf?raw=1). (If there are corrections then this PDF file will be updated and a `changelog` will be provided at the end of the PDF file.)
+The details for this assignment are available [on Notion](https://www.notion.so/cpen221ubc/MP3-Arithmetic-Cryptarithms-and-Such-Small-Pebbles-0697966a91d84c928633c93c148ecff3).

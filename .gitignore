@@ -4,6 +4,7 @@
 # ignore build directory
 build/
 bin/
+out/
 
 # ignore some grade files
 .gradle/
@@ -29,3 +30,6 @@ Thumbs.db
 .buildpath
 .classpath
 .project
+.idea/
+vcs.xml
+*.iml

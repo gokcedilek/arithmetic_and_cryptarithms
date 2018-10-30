@@ -1,4 +1,4 @@
-package ca.ubc.ece.cpen221.mp4.tests;
+package ca.ubc.ece.cpen221.mp3.tests;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
