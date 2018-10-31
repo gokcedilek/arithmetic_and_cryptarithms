@@ -1,4 +1,4 @@
-package ca.ubc.ece.cpen221.mp4.permutation;
+package ca.ubc.ece.cpen221.mp3.permutation;
 
 /**
  * Abstract Permutation - an interface

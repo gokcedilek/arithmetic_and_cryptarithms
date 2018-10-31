@@ -1,6 +1,4 @@
-package ca.ubc.ece.cpen221.mp4.avltree;
-
-import avltree.AvlTreeSet.Node;
+package ca.ubc.ece.cpen221.mp3.avltree;
 
 public class AvlTreeSet {
     private Node mRoot;

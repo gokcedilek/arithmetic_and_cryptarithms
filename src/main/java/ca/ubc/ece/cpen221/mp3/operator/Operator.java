@@ -1,4 +1,4 @@
-package ca.ubc.ece.cpen221.mp4.operator;
+package ca.ubc.ece.cpen221.mp3.operator;
 
 /**
  * Operator - an arithmetic operator. 

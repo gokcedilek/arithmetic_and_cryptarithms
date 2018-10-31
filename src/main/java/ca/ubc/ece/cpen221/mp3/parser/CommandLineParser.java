@@ -1,14 +1,14 @@
 /**
  * A simple command line parser for arithmetic expressions
  */
-package ca.ubc.ece.cpen221.mp4.parser;
+package ca.ubc.ece.cpen221.mp3.parser;
 
 import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
 
-import ca.ubc.ece.cpen221.mp4.expression.Expression;
-import ca.ubc.ece.cpen221.mp4.operator.Operator;
+import ca.ubc.ece.cpen221.mp3.expression.Expression;
+import ca.ubc.ece.cpen221.mp3.operator.Operator;
 
 /**
  * CommandLineParser - a command line calculator.

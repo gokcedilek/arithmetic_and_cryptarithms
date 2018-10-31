@@ -1,4 +1,4 @@
-package ca.ubc.ece.cpen221.mp4.gui;
+package ca.ubc.ece.cpen221.mp3.gui;
 
 import java.awt.BorderLayout;
 import java.awt.GridBagConstraints;
@@ -11,9 +11,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import ca.ubc.ece.cpen221.mp4.operator.BinaryOperator;
-import ca.ubc.ece.cpen221.mp4.operator.Operator;
-import ca.ubc.ece.cpen221.mp4.operator.UnaryOperator;
+import ca.ubc.ece.cpen221.mp3.operator.BinaryOperator;
+import ca.ubc.ece.cpen221.mp3.operator.Operator;
+import ca.ubc.ece.cpen221.mp3.operator.UnaryOperator;
 
 /**
  * Calculator - a JPanel containing a GUI for a calculator.
