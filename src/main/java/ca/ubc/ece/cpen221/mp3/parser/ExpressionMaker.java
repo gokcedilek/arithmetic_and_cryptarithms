@@ -1,5 +1,6 @@
 package ca.ubc.ece.cpen221.mp3.parser;
 
+import ca.ubc.ece.cpen221.mp3.expression.BinaryOperatorExpression;
 import ca.ubc.ece.cpen221.mp3.expression.Expression;
 import ca.ubc.ece.cpen221.mp3.operator.BinaryOperator;
 import ca.ubc.ece.cpen221.mp3.operator.UnaryOperator;
@@ -24,8 +25,7 @@ public class ExpressionMaker {
 	 */
 	public Expression createBinaryOperationExpression(BinaryOperator operator, Expression operand1,
 			Expression operand2) {
-		// TODO implement this method
-		return null;
+		return new BinaryOperatorExpression(operator, operand1, operand2);
 	}
 
 	/**
@@ -38,8 +38,12 @@ public class ExpressionMaker {
 	 * @return the expression
 	 */
 	public Expression createUnaryOperationExpression(UnaryOperator operator, Expression operand) {
-		// TODO implement this method
-		return null;
+		switch (operator.toString()){
+			case "-":
+				break;
+			case "| |":
+				break;
+		}
 	}
 
 	/**
@@ -50,6 +54,7 @@ public class ExpressionMaker {
 	 * @return the expression
 	 */
 	public Expression createNumberExpression(double value) {
+
 		// TODO implement this method
 		return null;
 	}

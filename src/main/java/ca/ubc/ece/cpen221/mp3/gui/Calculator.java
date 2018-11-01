@@ -14,6 +14,7 @@ import javax.swing.JPanel;
 import ca.ubc.ece.cpen221.mp3.operator.BinaryOperator;
 import ca.ubc.ece.cpen221.mp3.operator.Operator;
 import ca.ubc.ece.cpen221.mp3.operator.UnaryOperator;
+import com.sun.org.apache.xalan.internal.xsltc.runtime.Operators;
 
 /**
  * Calculator - a JPanel containing a GUI for a calculator.
@@ -41,6 +42,9 @@ public class Calculator extends JPanel {
 	 *            a list of operators to be added to the calculator
 	 */
 	public Calculator(List<Operator> supportedOperatorList) {
+		this.supportedOperatorList=supportedOperatorList;
+
+
 		// TODO implement this constructor
 	}
 
