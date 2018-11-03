@@ -8,7 +8,7 @@ import java.util.Scanner;
 import java.util.Set;
 
 import ca.ubc.ece.cpen221.mp3.expression.Expression;
-import ca.ubc.ece.cpen221.mp3.operator.Operator;
+import ca.ubc.ece.cpen221.mp3.operator.*;
 
 /**
  * CommandLineParser - a command line calculator.
@@ -27,7 +27,13 @@ public class CommandLineParser {
 
 		Set<Operator> operatorSet = new HashSet<Operator>();
 
-		// TODO add operators to operatorSet
+		operatorSet.add(new AdditionOperator());
+		operatorSet.add(new SubtractionOperator());
+		operatorSet.add(new MultiplicationOperator());
+		operatorSet.add(new DivisionOperator());
+		operatorSet.add(new ExponentiationOperator());
+		operatorSet.add(new NegationOperator());
+		operatorSet.add(new AbsoluteValueOperator());
 
 		ExpressionParser parser = new ExpressionParser(operatorSet, new ExpressionMaker());
 
@@ -42,6 +48,9 @@ public class CommandLineParser {
 				System.out.println("Input format not accepted. Please try again.");
 			}
 		} while (true);
+		//create new expressionmaker's in this class using the 3 constructors of expmaker
+		//pass your expression maker object to a parser and evaluate
+
 
 	}
 

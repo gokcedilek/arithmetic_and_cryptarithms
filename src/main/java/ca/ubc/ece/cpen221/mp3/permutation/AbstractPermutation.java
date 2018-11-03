@@ -1,5 +1,7 @@
 package ca.ubc.ece.cpen221.mp3.permutation;
 
+import java.util.List;
+
 /**
  * Abstract Permutation - an interface
  *
@@ -14,11 +16,19 @@ public interface AbstractPermutation<T> {
 	// and you can read more about generics here: 
 	// https://docs.oracle.com/javase/tutorial/java/generics/index.html
 
-	/**
-	 * get one permutation.
-	 * 
-	 * @return one generic Array of permutation.
-	 */
-	T[] getOnePermutation();
+    /**
+     * Check if there is another permutation that has not yet been explored
+     * @return true if there is a permutation that has not been returned yet,
+     *          and false if all permutations have been returned
+     */
+	boolean hasNext();
+
+    /**
+     * Obtain the next permutation to explore,
+     * with the precondition that hasNext() returns true
+     *
+     * @return the next permutation to explore
+     */
+	List<T> next();
 
 }
