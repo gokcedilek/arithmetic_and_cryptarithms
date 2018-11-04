@@ -47,20 +47,20 @@ public class SimpleCalculatorTest {
         assertEquals("3.0*2.0", exp3.toString());
         assertEquals("3.0/2.0", exp4.toString());
 
-//        assertTrue(exp1.eval() == 5.0);
-//        assertTrue(exp2.eval() == 1.0);
-//        assertTrue(exp3.eval() == 6.0);
-//        assertTrue(exp4.eval() == 1.5);
-//
-//        /* with variables */
-//
-//        String variableName = "x";
-//        VariableExpression variable = new VariableExpression(variableName);
-//        double variableValue = 1.0;
-//        variable.store(variableValue);
-//        assertTrue(variable.eval() == 1.0);
-//        assertEquals(variable.name(), "x");
-////        assertEquals(variable.toString(), "x=1.0");
+        assertTrue(exp1.eval() == 5.0);
+        assertTrue(exp2.eval() == 1.0);
+        assertTrue(exp3.eval() == 6.0);
+        assertTrue(exp4.eval() == 1.5);
+
+        /* with variables */
+
+        String variableName = "x";
+        VariableExpression variable = new VariableExpression(variableName);
+        double variableValue = 1.0;
+        variable.store(variableValue);
+        assertTrue(variable.eval() == 1.0);
+        assertEquals(variable.name(), "x");
+        assertEquals(variable.toString(), "x=1.0");
 //
 //        /**
 //         * test the derivative of the variable function x * x - 2.0

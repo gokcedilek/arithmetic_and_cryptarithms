@@ -1,5 +1,8 @@
 package ca.ubc.ece.cpen221.mp3.expression;
 
+import ca.ubc.ece.cpen221.mp3.parser.ExpressionMaker;
+import ca.ubc.ece.cpen221.mp3.parser.ExpressionParser;
+
 import java.util.Scanner;
 import java.util.Stack;
 
@@ -34,69 +37,12 @@ public class VariableExpression implements Expression {
 
 	@Override
 	public double eval() {
-		String exp= this.name;
-		Scanner scanner = new Scanner(exp);
-		double result = 0.0;
-		Stack myStack = new Stack();
-		while (scanner.hasNext()) {
-			String s= scanner.next();
-			String s1;
-			String s2;
-			switch (s) {
-//				case "+":
-//					s1 = (String) myStack.pop();
-//					s2 = (String) myStack.pop();
-//					result= s1+s2;
-//					newToken= new Token(result);
-//					myStack.push(newToken);
-//					break;
-//				case "-":
-//					one = (Token) myStack.pop();
-//					two = (Token) myStack.pop();
-//					s1 = one.toString();
-//					s2 = two.toString();
-//					int1= Double.parseDouble(s1);
-//					int2= Double.parseDouble(s2);
-//					result= Double.valueOf(int2-int1);
-//					newToken= new Token(result);
-//					myStack.push(newToken);
-//					break;
-//				case "*":
-//					one = (Token) myStack.pop();
-//					two = (Token) myStack.pop();
-//					s1 = one.toString();
-//					s2 = two.toString();
-//					int1= Double.parseDouble(s1);
-//					int2= Double.parseDouble(s2);
-//					result= Double.valueOf(int1*int2);
-//					newToken= new Token(result);
-//					myStack.push(newToken);
-//					break;
-//				case "/":
-//					one = (Token) myStack.pop();
-//					two = (Token) myStack.pop();
-//					s1 = one.toString();
-//					s2 = two.toString();
-//					int1= Double.parseDouble(s1);
-//					int2= Double.parseDouble(s2);
-//					result= Double.valueOf(int2/int1);
-//					newToken= new Token(result);
-//					myStack.push(newToken);
-//					break;
-//				default:
-//					myStack.push(currToken);
-			}
-		}
-		return result;
-//		// TODO implement this method
-//
-//		store(value);
-//		return value; // change this
+		return value;
 	}
 
 	@Override
 	public String toString() {
-		return name;
+		return name+ "="+ value;
 	}
 
 	/**

@@ -1,7 +1,6 @@
 package ca.ubc.ece.cpen221.mp3.parser;
 
-import ca.ubc.ece.cpen221.mp3.expression.Expression;
-import ca.ubc.ece.cpen221.mp3.expression.VariableExpression;
+import ca.ubc.ece.cpen221.mp3.expression.*;
 import ca.ubc.ece.cpen221.mp3.operator.BinaryOperator;
 import ca.ubc.ece.cpen221.mp3.operator.UnaryOperator;
 
@@ -25,13 +24,8 @@ public class ExpressionMaker {
 	 */
 	public Expression createBinaryOperationExpression(BinaryOperator operator, Expression operand1,
 			Expression operand2) {
-//		double val1= operand1.eval();
-//		double val2= operand2.eval();
-//		double value= operator.apply(val1,val2);
-        String name= operand1.toString()+operator.toString()+operand2.toString();
-		Expression e= new VariableExpression(name);
-//		((VariableExpression) e).store(value);
-		return e;
+		BinaryExpression be= new BinaryExpression(operand1,operand2, operator);
+		return be;
 
 	}
 
@@ -45,9 +39,8 @@ public class ExpressionMaker {
 	 * @return the expression
 	 */
 	public Expression createUnaryOperationExpression(UnaryOperator operator, Expression operand) {
-		String name= operator.toString()+operand.toString();
-		Expression e= new VariableExpression(name);
-		return e;
+		UnaryExpression ue= new UnaryExpression(operand,operator);
+		return ue;
 	}
 
 	/**
@@ -58,9 +51,8 @@ public class ExpressionMaker {
 	 * @return the expression
 	 */
 	public Expression createNumberExpression(double value) {
-		String name= Double.toString(value);
-		Expression e= new VariableExpression(name);
-		return e;
+		NumberExpression ue= new NumberExpression(value);
+		return ue;
 	}
 
 }
