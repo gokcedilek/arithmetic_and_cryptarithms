@@ -25,13 +25,14 @@ public class ExpressionMaker {
 	 */
 	public Expression createBinaryOperationExpression(BinaryOperator operator, Expression operand1,
 			Expression operand2) {
-		double val1= operand1.eval();
-		double val2= operand2.eval();
-		double value= operator.apply(val1,val2);
-		String name= operand1.toString()+operator.toString()+operand2.toString();
+//		double val1= operand1.eval();
+//		double val2= operand2.eval();
+//		double value= operator.apply(val1,val2);
+        String name= operand1.toString()+operator.toString()+operand2.toString();
 		Expression e= new VariableExpression(name);
-		((VariableExpression) e).store(value);
+//		((VariableExpression) e).store(value);
 		return e;
+
 	}
 
 	/**

@@ -88,11 +88,10 @@ public class VariableExpression implements Expression {
 			}
 		}
 		return result;
-	}
-		// TODO implement this method
-
-		store(value);
-		return value; // change this
+//		// TODO implement this method
+//
+//		store(value);
+//		return value; // change this
 	}
 
 	@Override
