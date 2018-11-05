@@ -5,8 +5,10 @@ package ca.ubc.ece.cpen221.mp3.expression;
  *
  */
 public class DerivativeExpression implements Expression {
-		
-	/**
+	private Expression function;
+	private VariableExpression indep;
+	private final double DELTA= Math.pow(10, -9);
+/**
 	 * Create an expression representing the derivative of the specified
 	 * function with respect to the specified variable.
 	 * 
@@ -16,13 +18,23 @@ public class DerivativeExpression implements Expression {
 	 */
 	public DerivativeExpression(Expression fn, 
 					VariableExpression independentVar) {
-		// TODO implement this constructor
+		function=fn;
+		indep=independentVar;
 	}
+
 
 	@Override
 	public double eval() {
-		// TODO implement this method
-		return 0; // change this
+		double one= function.eval();
+		indep.store(indep.eval()+DELTA);
+		double two= function.eval();
+		indep.store(indep.eval()-DELTA);
+		return (two-one)/DELTA;
+	}
+
+	@Override
+	public String toString(){
+		return null;
 	}
 	
 

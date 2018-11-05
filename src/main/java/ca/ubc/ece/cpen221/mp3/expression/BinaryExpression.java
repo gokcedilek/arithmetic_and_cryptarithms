@@ -22,6 +22,6 @@ public class BinaryExpression implements Expression {
 
     @Override
     public String toString(){
-        return e1.toString()+ o.toString()+e2.toString();
+        return "(" + e1.toString()+ o.toString()+e2.toString()+ ")";
     }
 }

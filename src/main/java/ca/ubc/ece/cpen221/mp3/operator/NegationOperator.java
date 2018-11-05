@@ -8,6 +8,6 @@ public class NegationOperator implements UnaryOperator {
 
     @Override
     public String toString() {
-        return "!";
+        return "-";
     }
 }
