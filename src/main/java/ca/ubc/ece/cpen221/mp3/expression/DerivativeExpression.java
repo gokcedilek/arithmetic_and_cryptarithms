@@ -36,6 +36,18 @@ public class DerivativeExpression implements Expression {
 	public String toString(){
 		return null;
 	}
+
+	public static VariableExpression NewtonMethod(Expression fn, VariableExpression indepVar, double tolerance){
+		if(Math.abs(fn.eval())<= tolerance){
+			return indepVar;
+		}
+		else{
+			Expression fn2= new DerivativeExpression(fn, indepVar);
+			double check= indepVar.eval()- (fn.eval()/ fn2.eval());
+			indepVar.store(check);
+			return NewtonMethod(fn,indepVar,tolerance);
+		}
+	}
 	
 
 }
