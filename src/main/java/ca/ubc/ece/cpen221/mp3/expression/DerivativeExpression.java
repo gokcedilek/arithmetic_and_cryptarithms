@@ -37,15 +37,19 @@ public class DerivativeExpression implements Expression {
 		return null;
 	}
 
-	public static VariableExpression NewtonMethod(Expression fn, VariableExpression indepVar, double tolerance){
+	public static double NewtonsMethod(Expression fn, VariableExpression indepVar, double x0, double tolerance){
+		//parameters: initially x0 is equal to the value of indepVar
+		double xn;
+		double temp= indepVar.eval();
+		indepVar.store(x0);
 		if(Math.abs(fn.eval())<= tolerance){
-			return indepVar;
+			return indepVar.eval();
 		}
 		else{
 			Expression fn2= new DerivativeExpression(fn, indepVar);
-			double check= indepVar.eval()- (fn.eval()/ fn2.eval());
-			indepVar.store(check);
-			return NewtonMethod(fn,indepVar,tolerance);
+			xn= indepVar.eval()- (fn.eval()/ fn2.eval());
+			indepVar.store(temp);
+			return NewtonsMethod(fn,indepVar,xn,tolerance);
 		}
 	}
 	

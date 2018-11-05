@@ -207,7 +207,50 @@ public class SimpleCalculatorTest {
                 Expression fn4= maker.createBinaryOperationExpression(sub, fn1, fn3);
                 Expression fn5= maker.createBinaryOperationExpression(add, fn4, numExp1);
                 final double tolerance = 1e-5;
-                System.out.println(DerivativeExpression.NewtonMethod(fn5, variable,tolerance).eval());
+                System.out.println(DerivativeExpression.NewtonsMethod(fn5, variable,variableValue, tolerance));
+        }
+
+        @Test
+        public void Newton2(){
+                String variableName = "x";
+                VariableExpression variable = new VariableExpression(variableName);
+                double variableValue = 0.0;
+                variable.store(variableValue);
+                ExpressionMaker maker = new ExpressionMaker();
+                BinaryOperator expo= new ExponentiationOperator();
+                BinaryOperator add= new AdditionOperator();
+                BinaryOperator mul= new MultiplicationOperator();
+                Expression numExp1 = maker.createNumberExpression(1.0);
+                Expression numExp2 = maker.createNumberExpression(2.0);
+                Expression numExp3 = maker.createNumberExpression(3.0);
+                Expression fn1= maker.createBinaryOperationExpression(expo, variable,numExp2); //x^2
+                Expression fn2= maker.createBinaryOperationExpression(mul, variable,numExp3); //3*x
+                Expression fn3= maker.createBinaryOperationExpression(add, fn1, fn2);
+                Expression fn4= maker.createBinaryOperationExpression(add, fn3, numExp1);
+                final double tolerance = 3e-9;
+                System.out.println(DerivativeExpression.NewtonsMethod(fn4, variable,variableValue, tolerance));
+        }
+
+        @Test
+        public void Newton3(){
+                String variableName = "x";
+                VariableExpression variable = new VariableExpression(variableName);
+                double variableValue = -5.0;
+                variable.store(variableValue);
+                ExpressionMaker maker = new ExpressionMaker();
+                BinaryOperator expo= new ExponentiationOperator();
+                BinaryOperator add= new AdditionOperator();
+                BinaryOperator mul= new MultiplicationOperator();
+                Expression numExp1 = maker.createNumberExpression(2.0);
+                Expression numExp2= maker.createNumberExpression(5.0);
+                Expression numExp3= maker.createNumberExpression(6.0);
+                Expression fn1= maker.createBinaryOperationExpression(expo, variable,numExp1); //x^2
+                Expression fn2= maker.createBinaryOperationExpression(mul,variable, numExp2 ); //5x
+                Expression fn3= maker.createBinaryOperationExpression(add, fn1, fn2); //x^2 + 5x
+                Expression fn4= maker.createBinaryOperationExpression(add, fn3, numExp3);//x^2+5x+6
+                final double tolerance = 1e-5;
+                System.out.println(DerivativeExpression.NewtonsMethod(fn4, variable,variableValue,tolerance));
+
         }
 
 
