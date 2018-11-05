@@ -9,6 +9,9 @@ import ca.ubc.ece.cpen221.mp3.operator.*;
 import ca.ubc.ece.cpen221.mp3.parser.ExpressionMaker;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 // TODO you will need to import other packages that has code to test
 
 public class SimpleCalculatorTest {
@@ -250,6 +253,16 @@ public class SimpleCalculatorTest {
                 Expression fn4= maker.createBinaryOperationExpression(add, fn3, numExp3);//x^2+5x+6
                 final double tolerance = 1e-5;
                 System.out.println(DerivativeExpression.NewtonsMethod(fn4, variable,variableValue,tolerance));
+
+        }
+
+        @Test
+        public void Perm1(){
+                List<Integer> toPermute= new ArrayList<>();
+                toPermute.add(1);
+                toPermute.add(2);
+                toPermute.add(3);
+                toPermute.add(4);
 
         }
 
