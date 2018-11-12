@@ -30,6 +30,12 @@ public class AVLTest9 {
         assertTrue(contains);
     }
 
+    @Test
+    public void testContains2() {
+        boolean contains = avltree.contains(12);
+        assertTrue(contains);
+    }
+
 
     @Test
     public void testMin() {
