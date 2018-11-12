@@ -58,7 +58,7 @@ public class AVLTest9 {
     @Test
     public void testHeight() {
         int height = avltree.getHeight();
-        assertEquals(2, height);
+        assertEquals(1, height);
     }
 
 }

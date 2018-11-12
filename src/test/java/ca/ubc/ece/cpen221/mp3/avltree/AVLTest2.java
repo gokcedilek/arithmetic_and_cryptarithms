@@ -35,7 +35,7 @@ public class AVLTest2 {
     @Test
     public void testHeight() {
         int height = avlTree.getHeight();
-        assertEquals(3, height);
+        assertEquals(2, height);
     }
 
     @Test
@@ -65,6 +65,12 @@ public class AVLTest2 {
     public void testContains5() {
         boolean contains = avlTree.contains(1);
         assertTrue(contains);
+    }
+
+    @Test
+    public void testContains6() {
+        boolean contains = avlTree.contains(2);
+        assertFalse(contains);
     }
 
     @Test
