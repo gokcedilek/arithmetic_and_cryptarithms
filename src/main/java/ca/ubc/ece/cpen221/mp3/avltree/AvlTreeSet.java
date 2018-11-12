@@ -109,6 +109,8 @@ public class AvlTreeSet {
      * @return The height of the AvlTreeSet.
      */
     public int getHeight() {
+        if(!isEmpty()){
+        return mRoot.getHeight()+1;}
         return mRoot.getHeight();
     }
 

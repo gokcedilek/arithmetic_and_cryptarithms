@@ -49,4 +49,10 @@ public class AVLTest9 {
         assertEquals(3, size);
     }
 
+    @Test
+    public void testHeight() {
+        int height = avltree.getHeight();
+        assertEquals(2, height);
+    }
+
 }

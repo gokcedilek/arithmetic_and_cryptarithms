@@ -1,4 +1,54 @@
-package ca.ubc.ece.cpen221.mp3.expression;
+package ca.ubc.ece.cpen221.mp3.avltree;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class AVLTest2 {
+    private AvlTreeSet avlTree;
+
+    @Before
+    public void AVLTest2() {
+        avlTree = new AvlTreeSet();
+        avlTree.insert(9);
+        avlTree.insert(1);
+        avlTree.insert(12);
+        avlTree.insert(11);
+        avlTree.insert(13);
+    }
+
+    @Test
+    public void testEmpty() {
+        boolean empty = avlTree.isEmpty();
+        assertFalse(empty);
+    }
+
+    @Test
+    public void testSize() {
+        int size = avlTree.size();
+        assertEquals(5, size);
+    }
+
+    @Test
+    public void testHeight() {
+        int height = avlTree.getHeight();
+        assertEquals(3, height);
+    }
+
+    @Test
+    public void testMin() {
+        int min = avlTree.getMin();
+        assertEquals(1, min);
+    }
+
+    @Test
+    public void testMax() {
+        int max = avlTree.getMax();
+        assertEquals(13, max);
+    }
+
 }
+
