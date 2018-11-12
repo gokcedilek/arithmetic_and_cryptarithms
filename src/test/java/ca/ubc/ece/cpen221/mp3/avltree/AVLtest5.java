@@ -39,43 +39,43 @@ public class AVLtest5{
 
     @Test
     public void testContains() {
-        boolean contains = avlTree.contains(13);
-        assertTrue(contains);
+        boolean test = avlTree.contains(13);
+        assertTrue(test);
     }
     @Test
     public void testContains2() {
-        boolean contains = avlTree.contains(11);
-        assertFalse(contains);
+        boolean test = avlTree.contains(11);
+        assertFalse(test);
     }
 
     @Test
     public void testContains3() {
-        boolean contains = avlTree.contains(12);
-        assertTrue(contains);
+        boolean test = avlTree.contains(12);
+        assertTrue(test);
     }
 
     @Test
     public void testContains4() {
-        boolean contains = avlTree.contains(9);
-        assertTrue(contains);
+        boolean test = avlTree.contains(9);
+        assertTrue(test);
     }
 
     @Test
     public void testContains5() {
-        boolean contains = avlTree.contains(1);
-        assertTrue(contains);
+        boolean test = avlTree.contains(1);
+        assertTrue(test);
     }
 
     @Test
     public void testContains7() {
-        boolean contains = avlTree.contains(14);
-        assertTrue(contains);
+        boolean test = avlTree.contains(14);
+        assertTrue(test);
     }
 
     @Test
     public void testContains6() {
-        boolean contains = avlTree.contains(2);
-        assertFalse(contains);
+        boolean test = avlTree.contains(2);
+        assertFalse(test);
     }
 
     @Test

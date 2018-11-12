@@ -42,18 +42,18 @@ public class AVLTest3{
 
     @Test
     public void testContains() {
-        boolean contains = avltree.contains(12);
-        assertFalse(contains);
+        boolean test = avltree.contains(12);
+        assertFalse(test);
     }
 
     @Test
-    public void testcheckMin(){
+    public void testMin(){
         int min = avltree.getMin();
         assertEquals(1, min);
     }
 
     @Test
-    public void testcheckMax() {
+    public void testMax() {
         int max = avltree.getMax();
         assertEquals(14, max);
     }

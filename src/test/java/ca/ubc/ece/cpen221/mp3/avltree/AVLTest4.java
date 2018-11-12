@@ -52,12 +52,12 @@ public class AVLTest4{
 
     @Test
     public void testContains() {
-        boolean contains = avltree.contains(14);
-        assertTrue(contains);
+        boolean test = avltree.contains(14);
+        assertTrue(test);
     }
 
     @Test
-    public void checkMin() {
+    public void testMin() {
         int min = avltree.getMin();
         assertEquals(1, min);
     }
