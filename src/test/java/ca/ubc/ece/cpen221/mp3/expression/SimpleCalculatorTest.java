@@ -12,11 +12,9 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-// TODO you will need to import other packages that has code to test
 
 public class SimpleCalculatorTest {
 
-	// TODO Add more tests
 
 	@Test
 	public void testSimpleOperations() {
@@ -45,10 +43,10 @@ public class SimpleCalculatorTest {
 
         /* simple arithmetic */
 
-//        assertEquals("3.0+2.0", exp1.toString());
-//        assertEquals("3.0-2.0", exp2.toString());
-//        assertEquals("3.0*2.0", exp3.toString());
-//        assertEquals("3.0/2.0", exp4.toString());
+        assertEquals("3.0+2.0", exp1.toString());
+        assertEquals("3.0-2.0", exp2.toString());
+        assertEquals("3.0*2.0", exp3.toString());
+        assertEquals("3.0/2.0", exp4.toString());
 
         assertTrue(exp1.eval() == 5.0);
         assertTrue(exp2.eval() == 1.0);
@@ -152,10 +150,30 @@ public class SimpleCalculatorTest {
             Expression fn3= maker.createBinaryOperationExpression(sub, numExp3, fn1); //15-x^3
             Expression fn4= maker.createBinaryOperationExpression(div, fn3, fn2);
             DerivativeExpression d = new DerivativeExpression(fn4, variable);
+            assertTrue(Double.toString(2.7500002275360202).equals(d.toString()));
             double dVal = d.eval();
             final double tolerance = 1e-5;
             assertTrue(Math.abs(dVal-2.75) <= tolerance);
     }
+
+        @Test
+        public void testException(){
+                ExpressionMaker maker = new ExpressionMaker();
+
+                final Expression numExp1 = maker.createNumberExpression(3.0);
+                final Expression numExp2 = maker.createNumberExpression(0.0);
+                BinaryOperator div = new DivisionOperator();
+                Expression exp = maker.createBinaryOperationExpression(div, numExp1, numExp2);
+                boolean thrown = false;
+
+                try {
+                        exp.eval();
+                } catch (ArithmeticException e) {
+                        thrown = true;
+                }
+
+                assertTrue(thrown);
+        }
 
         @Test
         public void test1() {
@@ -172,7 +190,7 @@ public class SimpleCalculatorTest {
                 UnaryOperator neg = new NegationOperator();
 
                 assertEquals(abs.toString(), "| |");
-                assertEquals(expo.toString(), "x^y");
+                assertEquals(expo.toString(), "^");
                 assertEquals(neg.toString(), "-");
 
                 Expression exp1 = maker.createUnaryOperationExpression(abs, numExp1);
@@ -181,12 +199,12 @@ public class SimpleCalculatorTest {
 
 
                 assertEquals("|10.5|", exp1.toString());
-                //assertEquals("10.5^15.27", exp2.toString());
+                assertEquals("10.5^15.27", exp2.toString());
                 assertEquals("-10.5", exp3.toString());
 
                 assertTrue(exp1.eval() == 10.5);
-                //assertTrue(exp2.eval() == 9.0);
                 assertTrue(exp3.eval() == -10.5);
+                assertTrue(3.9224787257927925E15==exp2.eval());
         }
 
         @Test
@@ -253,16 +271,6 @@ public class SimpleCalculatorTest {
                 Expression fn4= maker.createBinaryOperationExpression(add, fn3, numExp3);//x^2+5x+6
                 final double tolerance = 1e-5;
                 System.out.println(DerivativeExpression.NewtonsMethod(fn4, variable,variableValue,tolerance));
-
-        }
-
-        @Test
-        public void Perm1(){
-                List<Integer> toPermute= new ArrayList<>();
-                toPermute.add(1);
-                toPermute.add(2);
-                toPermute.add(3);
-                toPermute.add(4);
 
         }
 

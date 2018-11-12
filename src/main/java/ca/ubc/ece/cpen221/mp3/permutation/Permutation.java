@@ -18,7 +18,7 @@ public class Permutation<T> implements AbstractPermutation<T> {
     public Permutation(List<T> baseList) {
         aPermutation=baseList;
         allPermutations= new HashSet<>();
-        wrapPermutations= (Stack)(allPermutations);
+        wrapPermutations= new Stack<List<T>>();
     }
 
 	@Override
@@ -37,25 +37,32 @@ public class Permutation<T> implements AbstractPermutation<T> {
     	return copy;
 	}
 	public void permuteAll(){
-    	permute(aPermutation, 0,aPermutation.size());
+    	permute(aPermutation, 0,aPermutation.size()-1);
 	}
 
 	public void permute(List<T> myList, int start, int end){
     	if(start==end){
-    		allPermutations.add(myList);
+    		allPermutations.add(new ArrayList<T>(myList));
+    		wrapPermutations.push(new ArrayList<T>(myList));
 		}
 		else{
-			for(int i=start; i<end; i++){
+			for(int i=start; i<=end; i++){
 				myList= swap(myList, start, i);
 				permute(myList,start+1, end );
+				myList = swap(myList, start, i);
 			}
 		}
 	}
 	private List<T> swap(List<T> myList, int start, int end){
-    	List<T> tempList= myList;
+    	List<T> tempList = myList;
     	T temp= tempList.get(start);
-    	tempList.add(start, tempList.get(end)); //add end to start
-    	tempList.add(end, temp); //add start to end
+    	/*tempList.add(start, tempList.get(end)); //add end to start
+    	tempList.add(end, temp); //add start to end*/
+    	//Added here
+
+        tempList.set(start, tempList.get(end));
+        tempList.set(end, temp);
+		//Until here
 		return tempList;
 	}
 	

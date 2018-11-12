@@ -48,10 +48,6 @@ public class CommandLineParser {
 				System.out.println("Input format not accepted. Please try again.");
 			}
 		} while (true);
-		//create new expressionmaker's in this class using the 3 constructors of expmaker
-		//pass your expression maker object to a parser and evaluate
-
-
 	}
 
 }

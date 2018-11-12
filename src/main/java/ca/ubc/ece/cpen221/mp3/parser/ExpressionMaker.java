@@ -51,8 +51,8 @@ public class ExpressionMaker {
 	 * @return the expression
 	 */
 	public Expression createNumberExpression(double value) {
-		NumberExpression ue= new NumberExpression(value);
-		return ue;
+		NumberExpression ne= new NumberExpression(value);
+		return ne;
 	}
 
 }

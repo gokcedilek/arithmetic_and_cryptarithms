@@ -34,7 +34,7 @@ public class DerivativeExpression implements Expression {
 
 	@Override
 	public String toString(){
-		return null;
+		return Double.toString(this.eval());
 	}
 
 	public static double NewtonsMethod(Expression fn, VariableExpression indepVar, double x0, double tolerance){

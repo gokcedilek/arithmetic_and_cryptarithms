@@ -1,4 +1,4 @@
-package ca.ubc.ece.cpen221.mp3.expression;
+package ca.ubc.ece.cpen221.mp3.crypta;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
@@ -299,6 +299,18 @@ public class Tests {
         }
 
         assertEquals(test, test1);
+    }
+
+    @Test
+    public void test6(){
+        List<Integer> perm = new ArrayList<>();
+        perm.add(1); perm.add(2); perm.add(3); perm.add(4);
+        Permutation<Integer> p1 = new Permutation(perm);
+        p1.permuteAll();
+        while(p1.hasNext()){
+            System.out.println(p1.next());
+        }
+
     }
 
 }
