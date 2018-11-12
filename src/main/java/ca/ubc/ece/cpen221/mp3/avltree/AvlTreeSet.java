@@ -210,10 +210,6 @@ public class AvlTreeSet {
                 return false;
             }
 
-            if (value == mValue) {
-                return true;
-            }
-
             if (value < mValue) {
                 return mLeft.contains(value);
             }
@@ -222,7 +218,7 @@ public class AvlTreeSet {
                 return mRight.contains(value);
             }
 
-            return false;
+            return value == mValue;
         }
 
         public int getMax() {
