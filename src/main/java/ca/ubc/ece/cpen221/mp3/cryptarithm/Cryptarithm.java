@@ -12,8 +12,8 @@ import java.util.*;
 /* Representation Invariant: a valid Cryptarithm object is composed of at most 10 different letters,
  is composed of one more words than there are operators,
  and is composed of exactly one equals sign
-* Abstraction Function:
-* */
+* Abstraction Function: given an equation composed of words, finds numerical values for letters so that the equation could be solved, and returns all possible mappings*
+*/
 
 /**
  * Cryptarithm - a datatype that represents a cryptarithm
@@ -115,7 +115,7 @@ public class Cryptarithm {
 		return true;
 	}
 
-	public static void getDigitSubsets(List<Integer> sequence, int index, Set<List<Integer>> subsequences, List<Integer> current){
+	private static void getDigitSubsets(List<Integer> sequence, int index, Set<List<Integer>> subsequences, List<Integer> current){
 		//sequence: pass numbers, subsequences: numberSubLists
 		if(current.size()== uniqueLetters.size()){ //ONLY THE SUBLISTS OF A GIVEN LENGTH
 			subsequences.add(current);

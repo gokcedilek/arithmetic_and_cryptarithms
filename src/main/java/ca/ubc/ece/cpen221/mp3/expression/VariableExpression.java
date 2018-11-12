@@ -35,11 +35,21 @@ public class VariableExpression implements Expression {
 		this.value=0.0;
 	}
 
+	/**
+	 * Evaluates an arithmetic expression.
+	 *
+	 * @return the value to which this expression evaluates
+	 */
 	@Override
 	public double eval() {
 		return value;
 	}
 
+	/**
+	 * Creates a String representation of an arithmetic expression.
+	 *
+	 * @return this expression in string form
+	 */
 	@Override
 	public String toString() {
 		return name+ "="+ value;

@@ -7,6 +7,11 @@ import ca.ubc.ece.cpen221.mp3.parser.ExpressionParser;
 
 import java.util.*;
 
+//Abstraction function:SolveCryptarithm class is a user interface to solve cryptharithms
+//Rep Invariant: Allows the user to solve a valid cryptarithm. a valid Cryptarithm object is composed of at most 10 different letters,
+// is composed of one more words than there are operators,
+// and is composed of exactly one equals sign
+
 public class SolveCryptarithm {
 
 	static public void main(String[] args) {
